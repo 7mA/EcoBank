@@ -1,0 +1,309 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "rest": {
+    "name": "rest",
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://www.baidu.com",
+          "headers": {}
+        },
+        "functions": {
+          "test": []
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryFinance?action=invoke",
+          "headers": {},
+          "body": {
+            "QFINANCEOperation": {
+              "query_product_id": "{query_product_id:string}"
+            }
+          }
+        },
+        "functions": {
+          "getAllProducts": [
+            "query_product_id"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryBalanceCoconut?action=invoke",
+          "headers": {},
+          "body": {
+            "QBALANCOOperation": {
+              "cust_balance": {
+                "card_number": "{card_num}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "queryBalanceCoconut": [
+            "card_num"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/QHisCoconut?action=invoke",
+          "headers": {},
+          "body": {
+            "QTRNHIC1Operation": {
+              "card_number": "{card_num}",
+              "query_date_scope": {
+                "end_date": "{end_date}",
+                "start_date": "{start_date}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "queryTrnHistCoconut": [
+            "card_num",
+            "start_date",
+            "end_date"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryBalanceOrange?action=invoke",
+          "headers": {},
+          "body": {
+            "QBALANOROperation": {
+              "cust_balance": {
+                "card_number": "{card_num}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "queryBalanceOrange": [
+            "card_num"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/QHisOrange?action=invoke",
+          "headers": {},
+          "body": {
+            "QTRNHIO1Operation": {
+              "card_number": "{card_num}",
+              "query_date_scope": {
+                "end_date": "{end_date}",
+                "start_date": "{start_date}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "queryTrnHistOrange": [
+            "card_num",
+            "start_date",
+            "end_date"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryPrivilegeNew?action=invoke",
+          "headers": {},
+          "body": {
+            "QPRIVIL1Operation": {
+              "merchantid_i": "{merchantid_i}",
+              "amount_payable": "{amount_payable}"
+            }
+          }
+        },
+        "functions": {
+          "queryPrivilege": [
+            "merchantid_i",
+            "amount_payable"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryPayment?action=invoke",
+          "headers": {},
+          "body": {
+            "QPAYMENTOperation": {
+              "merchantname_i": "{merchantname_i}",
+              "lowest_amount_paid": {
+                "bank_amount_paid": "{bank_amount_paid}"
+              },
+              "amount_payable": "{amount_payable}"
+            }
+          }
+        },
+        "functions": {
+          "queryPayment": [
+            "merchantname_i",
+            "bank_amount_paid",
+            "amount_payable"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/payBankCoconutN?action=invoke",
+          "headers": {},
+          "body": {
+            "PAYCOCO1Operation": {
+              "tran_info": {
+                "tran_amount": "{tran_amount}",
+                "merchantid": "{merchantid}",
+                "merchantname": "{merchantname}",
+                "merchanttype": "{merchanttype}",
+                "tran_card_number": "{tran_card_number}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "PayCoconut": [
+            "tran_amount",
+            "merchantid",
+            "merchantname",
+            "merchanttype",
+            "tran_card_number"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/payBankOrangeN?action=invoke",
+          "headers": {},
+          "body": {
+            "PAYORAN1Operation": {
+              "tran_info": {
+                "tran_amount": "{tran_amount}",
+                "merchantid": "{merchantid}",
+                "merchantname": "{merchantname}",
+                "merchanttype": "{merchanttype}",
+                "tran_card_number": "{tran_card_number}"
+              }
+            }
+          }
+        },
+        "functions": {
+          "PayOrange": [
+            "tran_amount",
+            "merchantid",
+            "merchantname",
+            "merchanttype",
+            "tran_card_number"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://restapi.amap.com/v3/place/detail",
+          "headers": {},
+          "query": {
+            "key": "{key}",
+            "id": "{id}",
+            "extensions": "{extensions=base}",
+            "language": "{language=en}"
+          }
+        },
+        "functions": {
+          "searchMerchant": [
+            "key",
+            "id"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "POST",
+          "url": "https://cap-sg-prd-5.integration.ibmcloud.com:15870/zosConnect/services/queryPrivilegeNew1?action=invoke",
+          "headers": {}
+        },
+        "functions": {
+          "queryAllPrivilege": []
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://restapi.amap.com/v3/place/around",
+          "headers": {},
+          "query": {
+            "key": "{key=04ccbeb4231f3b05f5cfc52ea4ea5188:string}",
+            "location": "{location}",
+            "types": "{types}",
+            "radius": "{radius=5000}",
+            "page": "{page=1}",
+            "output": "{output=JSON}",
+            "extensions": "{extensions=base}",
+            "language": "{language=en}"
+          }
+        },
+        "functions": {
+          "searchAroundByType": [
+            "location",
+            "types",
+            "radius",
+            "page"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://restapi.amap.com/v3/place/around",
+          "headers": {},
+          "query": {
+            "key": "{key=04ccbeb4231f3b05f5cfc52ea4ea5188:string}",
+            "location": "{location}",
+            "keyword": "{keyword}",
+            "radius": "{radius=5000}",
+            "page": "{page=1}",
+            "output": "{output=JSON}",
+            "extensions": "{extensions=base}",
+            "language": "{language=en}"
+          }
+        },
+        "functions": {
+          "searchAroundByKeyword": [
+            "location",
+            "keyword",
+            "radius",
+            "page"
+          ]
+        }
+      }
+    ]
+  },
+  "cloudant": {
+    "url": "https://07f5a3ed-f561-42d9-bd45-d96834ec5716-bluemix:88fb8fdd8e23506764f3948302feb2978783ac3f0580a3c56b3f6adf95ba5acf@07f5a3ed-f561-42d9-bd45-d96834ec5716-bluemix.cloudant.com",
+    "database": "ecobank",
+    "username": "07f5a3ed-f561-42d9-bd45-d96834ec5716-bluemix",
+    "password": "88fb8fdd8e23506764f3948302feb2978783ac3f0580a3c56b3f6adf95ba5acf",
+    "name": "cloudant",
+    "modelIndex": "",
+    "connector": "cloudant"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "EcoBankUsers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "remoting": {
+      "sharedMethods": {
+        "*": false,
+        "create": true,
+        "login": true,
+        "logout": true
+      }
+    }
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "ProductsOrders",
+      "foreignKey": "userid"
+    },
+    "cards": {
+      "type": "hasMany",
+      "model": "Cards",
+      "foreignKey": "userid"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "queryPaymentByUserd": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "string",
+          "required": true,
+          "description": "ecobankuser's id",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "merchantid",
+          "type": "string",
+          "required": true,
+          "description": "the id of merchant",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "merchantname",
+          "type": "string",
+          "required": true,
+          "description": "the name of merchant",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "money",
+          "type": "string",
+          "required": true,
+          "description": "the money shoul be paid",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "data",
+          "type": "string",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/payment",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

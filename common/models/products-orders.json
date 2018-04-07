@@ -1,0 +1,25 @@
+{
+  "name": "ProductsOrders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "held_investment": {
+      "type": "number",
+      "required": true
+    },
+    "held_product_id": {
+      "type": "string",
+      "required": true
+    },
+    "order_date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

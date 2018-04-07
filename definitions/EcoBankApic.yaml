@@ -1,0 +1,1162 @@
+paths:
+  /Products/all:
+    get:
+      tags:
+        - Products
+      operationId: Products.getAllProducts
+      parameters: []
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              products:
+                type: string
+      deprecated: false
+  /Products/detail:
+    get:
+      tags:
+        - Products
+      operationId: Products.getProductById
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              product:
+                type: string
+      deprecated: false
+  /Products/exists:
+    get:
+      tags:
+        - Products
+      operationId: Products.isProductExists
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exist:
+                type: object
+      deprecated: false
+  '/EcoBankUsers/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Find a related item by id for accessTokens.
+      operationId: EcoBankUsers.prototype.__findById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Delete a related item by id for accessTokens.
+      operationId: EcoBankUsers.prototype.__destroyById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - EcoBankUsers
+      summary: Update a related item by id for accessTokens.
+      operationId: EcoBankUsers.prototype.__updateById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/EcoBankUsers/{id}/orders/{fk}':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Find a related item by id for orders.
+      operationId: EcoBankUsers.prototype.__findById__orders
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for orders
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ProductsOrders'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Delete a related item by id for orders.
+      operationId: EcoBankUsers.prototype.__destroyById__orders
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for orders
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - EcoBankUsers
+      summary: Update a related item by id for orders.
+      operationId: EcoBankUsers.prototype.__updateById__orders
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for orders
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ProductsOrders'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ProductsOrders'
+      deprecated: false
+  '/EcoBankUsers/{id}/cards/{fk}':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Find a related item by id for cards.
+      operationId: EcoBankUsers.prototype.__findById__cards
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for cards
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Cards'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Delete a related item by id for cards.
+      operationId: EcoBankUsers.prototype.__destroyById__cards
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for cards
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - EcoBankUsers
+      summary: Update a related item by id for cards.
+      operationId: EcoBankUsers.prototype.__updateById__cards
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for cards
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Cards'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Cards'
+      deprecated: false
+  '/EcoBankUsers/{id}/accessTokens':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Queries accessTokens of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__get__accessTokens
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Creates a new instance in accessTokens of this model.
+      operationId: EcoBankUsers.prototype.__create__accessTokens
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Deletes all accessTokens of this model.
+      operationId: EcoBankUsers.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/EcoBankUsers/{id}/accessTokens/count':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Counts accessTokens of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__count__accessTokens
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/EcoBankUsers/{id}/orders':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Queries orders of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__get__orders
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ProductsOrders'
+      deprecated: false
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Creates a new instance in orders of this model.
+      operationId: EcoBankUsers.prototype.__create__orders
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ProductsOrders'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ProductsOrders'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Deletes all orders of this model.
+      operationId: EcoBankUsers.prototype.__delete__orders
+      parameters:
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/EcoBankUsers/{id}/orders/count':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Counts orders of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__count__orders
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/EcoBankUsers/{id}/cards':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Queries cards of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__get__cards
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Cards'
+      deprecated: false
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Creates a new instance in cards of this model.
+      operationId: EcoBankUsers.prototype.__create__cards
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Cards'
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Cards'
+      deprecated: false
+    delete:
+      tags:
+        - EcoBankUsers
+      summary: Deletes all cards of this model.
+      operationId: EcoBankUsers.prototype.__delete__cards
+      parameters:
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/EcoBankUsers/{id}/cards/count':
+    get:
+      tags:
+        - EcoBankUsers
+      summary: Counts cards of EcoBankUsers.
+      operationId: EcoBankUsers.prototype.__count__cards
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: EcoBankUsers id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /EcoBankUsers:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: EcoBankUsers.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/EcoBankUsers'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/EcoBankUsers'
+      deprecated: false
+  /EcoBankUsers/replaceOrCreate:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: EcoBankUsers.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/EcoBankUsers'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/EcoBankUsers'
+      deprecated: false
+  /EcoBankUsers/upsertWithWhere:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: EcoBankUsers.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/EcoBankUsers'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/EcoBankUsers'
+      deprecated: false
+  '/EcoBankUsers/{id}/replace':
+    post:
+      tags:
+        - EcoBankUsers
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: EcoBankUsers.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/EcoBankUsers'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/EcoBankUsers'
+      deprecated: false
+  /EcoBankUsers/login:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Login a user with username/email and password.
+      operationId: EcoBankUsers.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              The response body contains properties of the AccessToken created
+              on login.
+
+              Depending on the value of `include` parameter, the body may
+              contain additional properties:
+
+                - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
+
+            type: object
+      deprecated: false
+  /EcoBankUsers/logout:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Logout a user with access token.
+      operationId: EcoBankUsers.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /EcoBankUsers/reset:
+    post:
+      tags:
+        - EcoBankUsers
+      summary: Reset password for a user with email.
+      operationId: EcoBankUsers.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /EcoBankUsers/payment:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.queryPaymentByUserd__get_EcoBankUsers_payment
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: merchantid
+          in: query
+          required: true
+          type: string
+        - name: merchantname
+          in: query
+          required: true
+          type: string
+        - name: money
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              data:
+                type: string
+      deprecated: false
+  /EcoBankUsers/MerchantAroundByType:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.searchMerchantAroundByType
+      parameters:
+        - name: location
+          in: query
+          required: true
+          type: string
+        - name: types
+          in: query
+          required: true
+          type: string
+        - name: radius
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              Merchants:
+                type: string
+      deprecated: false
+  /EcoBankUsers/MerchantAroundByKeyword:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.searchMerchantAroundByKeyword
+      parameters:
+        - name: location
+          in: query
+          required: true
+          type: string
+        - name: keyword
+          in: query
+          required: true
+          type: string
+        - name: radius
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              Merchants:
+                type: string
+      deprecated: false
+  /EcoBankUsers/cards/otherscards:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.searchothershistory
+      parameters: []
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              cards:
+                type: string
+      deprecated: false
+  /EcoBankUsers/cards/balance:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.singleBalance
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: fk
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              balance:
+                type: object
+      deprecated: false
+  /EcoBankUsers/cards/history:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.singleHistory
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: fk
+          in: query
+          required: true
+          type: string
+        - name: startdate
+          in: query
+          required: true
+          type: string
+        - name: enddate
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              history:
+                type: string
+      deprecated: false
+  /EcoBankUsers/cards/statistics:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.singleStatistics
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: fk
+          in: query
+          required: true
+          type: string
+        - name: bymonth
+          in: query
+          required: true
+          type: boolean
+        - name: startdate
+          in: query
+          required: true
+          type: string
+        - name: enddate
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              data:
+                type: string
+      deprecated: false
+  /EcoBankUsers/balance:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.balance
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              balance:
+                type: string
+      deprecated: false
+  /EcoBankUsers/history:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.history
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: startdate
+          in: query
+          required: true
+          type: string
+        - name: enddate
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              history:
+                type: string
+      deprecated: false
+  /EcoBankUsers/statistics:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.statistics
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: bymonth
+          in: query
+          required: true
+          type: boolean
+        - name: startdate
+          in: query
+          required: true
+          type: string
+        - name: enddate
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              data:
+                type: string
+      deprecated: false
+  /EcoBankUsers/pay:
+    get:
+      tags:
+        - EcoBankUsers
+      operationId: EcoBankUsers.Pay
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - name: fk
+          in: query
+          required: true
+          type: string
+        - name: password
+          in: query
+          required: true
+          type: string
+        - name: merchantname
+          in: query
+          required: true
+          type: string
+        - name: buildingpoi
+          in: query
+          required: true
+          type: string
+        - name: money
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              data:
+                type: string
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      created:
+        type: string
+        format: date-time
+      userId:
+        type: string
+    required:
+      - id
+    additionalProperties: false
+  ProductsOrders:
+    properties:
+      held_investment:
+        type: number
+        format: double
+      held_product_id:
+        type: string
+      order_date:
+        type: string
+        format: date-time
+      id:
+        type: string
+      userid:
+        type: string
+    required:
+      - held_investment
+      - held_product_id
+    additionalProperties: false
+  Cards:
+    properties:
+      bank:
+        type: string
+      card_num:
+        type: string
+      query_password:
+        type: string
+      userid:
+        type: string
+    required:
+      - bank
+      - card_num
+    additionalProperties: false
+  EcoBankUsers:
+    properties:
+      realm:
+        type: string
+      username:
+        type: string
+      credentials:
+        type: object
+      challenges:
+        type: object
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      status:
+        type: string
+      created:
+        type: string
+        format: date-time
+      lastUpdated:
+        type: string
+        format: date-time
+      id:
+        type: string
+    required:
+      - email
+    additionalProperties: false
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: ecobankapic
+  version: 1.0.0
+  title: EcoBankApic
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: >-
+          https://apiconnect-f3adaef1-f5db-4655-8636-c270106f471b.xujiebj-dev.apic.mybluemix.net
+        invoke-tls-profile: 'client:Loopback-client'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
+          tls-profile: $(invoke-tls-profile)
+  gateway: micro-gateway
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false

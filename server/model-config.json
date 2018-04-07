@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Note": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Backend": {
+    "dataSource": "rest",
+    "public": false
+  },
+  "Products": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ProductsOrders": {
+    "dataSource": "cloudant",
+    "public": false
+  },
+  "Cards": {
+    "dataSource": "cloudant",
+    "public": false
+  },
+  "EcoBankUsers": {
+    "dataSource": "cloudant",
+    "public": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Cards",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bank": {
+      "type": "string",
+      "required": true
+    },
+    "card_num": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "query_password": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,179 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  id: 596daa530cf2bd93faeea5b9
+  name: xujiebj-dev
+  displayName: xujiebj (dev)
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/596daa530cf2bd93faeea5b9'
+  externalOrgId: ee1227a3-b76e-4da0-834a-69e3253a5d90
+  externalInviteOverride: 'https://console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: ee1227a3-b76e-4da0-834a-69e3253a5d90
+  externalNativeOrgId: 7d246411-335c-4d52-a485-5d269927bd99
+  bluemix:
+    inviteUri: 'https://console.ng.bluemix.net/apis/catalog/invitation'
+    organization: 7d246411-335c-4d52-a485-5d269927bd99
+    space: ee1227a3-b76e-4da0-834a-69e3253a5d90
+catalog:
+  id: 596daa530cf2bd93faeea5c5
+  orgId: 596daa530cf2bd93faeea5b9
+  name: Sandbox
+  shortName: sb
+  owner:
+    id: 596c78d90cf2161bd5c23500
+    username: xujiebj@cn.ibm.com
+    context: apimanager
+    idpId: 58341db4e63b1219f0f068d1
+    email: xujiebj@cn.ibm.com
+    firstName: Jie Xu
+    lastName: ''
+    status: ACTIVE
+    lastLoginTime: '2017-07-20T11:01:18.086+0000'
+    url: 'https://us.apiconnect.ibmcloud.com/v1/users/596c78d90cf2161bd5c23500'
+  apiCenter: false
+  portalType: BASIC
+  portalUrl: 'https://developer.us.apiconnect.ibmcloud.com/xujiebj-dev/sb'
+  advPortalUrl: 'https://sb-xujiebj-dev.developer.us.apiconnect.ibmcloud.com'
+  gatewayType: DataPowerGateway
+  gwServices:
+    - id: PRODAPIC_APIMGMT_GATEWAY
+      endpointUrl: 'https://api.us.apiconnect.ibmcloud.com/xujiebj-dev/sb'
+  idp: 596daa550cf2bd93faeea5c6
+  idps:
+    - 596daa550cf2bd93faeea5c6
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 596daa550cf2bd93faeea5ce
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: cab05040-7c72-460d-8033-2d284defa0f7
+    clientSecret: J8hB2nE3xH0rR5xK5mB6gY7sY1rR4gA0qE4fH5fC1iG3aE4cE7
+  createdAt: '2017-07-18T06:27:33.399+0000'
+  updatedAt: '2017-07-18T06:27:33.399+0000'
+  createdBy: apim-ops@wwpdl.vnet.ibm.com
+  updatedBy: apim-ops@wwpdl.vnet.ibm.com
+  url: >-
+    https://us.apiconnect.ibmcloud.com/v1/orgs/596daa530cf2bd93faeea5b9/environments/596daa530cf2bd93faeea5c5
+  applicationLifecycleEnabled: false
+  productDeploymentApprovalRequiredStates: []
+  orgName: xujiebj-dev
+space:
+  none: true
+app:
+  metadata:
+    guid: f3adaef1-f5db-4655-8636-c270106f471b
+  entity:
+    guid: f3adaef1-f5db-4655-8636-c270106f471b
+    name: ecobank
+    routes:
+      - guid: 0fcdeae9-34c6-49ad-8192-3b8edfe79a7a
+        host: apiconnect-f3adaef1-f5db-4655-8636-c270106f471b
+        port: null
+        path: ''
+        domain:
+          guid: 097a20f6-d543-4abd-bd5e-d388ed3eaa41
+          name: xujiebj-dev.apic.mybluemix.net
+    running_instances: 0
+    services:
+      - guid: 91c57aa8-3352-42e2-bff7-08aa4682188a
+        name: Cloudant NoSQL DB-gb
+        bound_app_count: 1
+        last_operation:
+          type: create
+          state: succeeded
+          description: ''
+          updated_at: '2017-07-18T06:27:02Z'
+          created_at: '2017-07-18T06:27:02Z'
+        dashboard_url: >-
+          https://cloudantbroker.ng.bluemix.net/dashboard/91c57aa8-3352-42e2-bff7-08aa4682188a
+        service_plan:
+          guid: e72c6030-cfe3-4477-9fb1-ca2b0408cbcb
+          name: Lite
+          service:
+            guid: 14c83ad2-6fd4-439a-8c3a-d1a20f8a2381
+            label: cloudantNoSQLDB
+            provider: null
+            version: null
+    available_domains:
+      - guid: 097a20f6-d543-4abd-bd5e-d388ed3eaa41
+        name: xujiebj-dev.apic.mybluemix.net
+        owning_organization_guid: 7d246411-335c-4d52-a485-5d269927bd99
+      - guid: 554d6553-3316-4218-8802-9e082da17bba
+        name: xujiebj-test.apic.mybluemix.net
+        owning_organization_guid: 7d246411-335c-4d52-a485-5d269927bd99
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+        router_group_type: null
+    production: false
+    space_guid: ee1227a3-b76e-4da0-834a-69e3253a5d90
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: 'SDK for Node.js(TM) (ibm-node.js-6.11.1, buildpack-v3.13-20170725-1347)'
+    detected_buildpack_guid: 712563ba-3a7b-4d45-a168-2791985db633
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: d29bf7a0-dc38-4f10-b3a6-e30ee7fbfb1b
+    command: null
+    console: true
+    debug: null
+    staging_task_id: b1f6d610-847b-452a-9a35-3d345dffd450
+    package_state: PENDING
+    health_check_type: port
+    health_check_timeout: null
+    health_check_http_endpoint: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: true
+    docker_image: null
+    package_updated_at: '2017-08-11T03:39:19Z'
+    detected_start_command: ./vendor/initial_startup.rb
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: 68ed8745-d5bc-420e-8a84-de827791959e
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+publishProducts: true
+productStageOnly: false
+specificProducts: true
+workspaceDir:
+  name: EcoBankApic
+  path: /code/ibmworkspace/Ecobankapic
+  id: 1
+  displayName: EcoBankApic
+  type: project
+  projectType: loopback
+products:
+  - info:
+      name: ecobankapic
+      title: EcoBankApic
+      version: 1.0.0
+    updatedAt: '2017-03-28T01:07:16.000Z'
+    file: /code/ibmworkspace/Ecobankapic/definitions/EcoBankApic-product.yaml
+    apis:
+      ecobankapic:
+        $ref: EcoBankApic.yaml
+    selected: true
